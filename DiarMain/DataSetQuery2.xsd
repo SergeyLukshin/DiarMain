@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetQuery2" targetNamespace="http://tempuri.org/DataSetQuery2.xsd" xmlns:mstns="http://tempuri.org/DataSetQuery2.xsd" xmlns="http://tempuri.org/DataSetQuery2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="diarConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="diarConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DiarMain.Properties.Settings.GlobalReference.Default.diarConnectionString" Provider="System.Data.SQLite" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="QEquipmentRecordTableAdapter" GeneratorDataComponentClassName="QEquipmentRecordTableAdapter" Name="QEquipmentRecord" UserDataComponentName="QEquipmentRecordTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="diarConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Equipments.*, Branches.BranchName, Subjects.SubjectName, Branches.SubjectID, Substations.BranchID, 
+                      ihA.InputKind AS InputKindHighA, ihA.InputName AS InputNameHighA, ihA.InputTypeID AS InputTypeIDHighA, ihA.InputManufacturerID AS InputManufacturerIDHighA, 
+                      ihA.InputNumber AS InputNumberHighA, ihA.InputCreateYear AS InputCreateYearHighA, ihA.InputUseBeginYear AS InputUseBeginYearHighA, 
+                      ihB.InputKind AS InputKindHighB, ihB.InputName AS InputNameHighB, ihB.InputTypeID AS InputTypeIDHighB, ihB.InputManufacturerID AS InputManufacturerIDHighB, 
+                      ihB.InputNumber AS InputNumberHighB, ihB.InputCreateYear AS InputCreateYearHighB, ihB.InputUseBeginYear AS InputUseBeginYearHighB, 
+                      ihC.InputKind AS InputKindHighC, ihC.InputName AS InputNameHighC, ihC.InputTypeID AS InputTypeIDHighC, ihC.InputManufacturerID AS InputManufacturerIDHighC, 
+                      ihC.InputNumber AS InputNumberHighC, ihC.InputCreateYear AS InputCreateYearHighC, ihC.InputUseBeginYear AS InputUseBeginYearHighC, 
+                      imA.InputKind AS InputKindMiddleA, imA.InputName AS InputNameMiddleA, imA.InputTypeID AS InputTypeIDMiddleA, imA.InputManufacturerID AS InputManufacturerIDMiddleA, 
+                      imA.InputNumber AS InputNumberMiddleA, imA.InputCreateYear AS InputCreateYearMiddleA, imA.InputUseBeginYear AS InputUseBeginYearMiddleA, 
+                      imB.InputKind AS InputKindMiddleB, imB.InputName AS InputNameMiddleB, imB.InputTypeID AS InputTypeIDMiddleB, imB.InputManufacturerID AS InputManufacturerIDMiddleB, 
+                      imB.InputNumber AS InputNumberMiddleB, imB.InputCreateYear AS InputCreateYearMiddleB, imB.InputUseBeginYear AS InputUseBeginYearMiddleB, 
+                      imC.InputKind AS InputKindMiddleC, imC.InputName AS InputNameMiddleC, imC.InputTypeID AS InputTypeIDMiddleC, imC.InputManufacturerID AS InputManufacturerIDMiddleC, 
+                      imC.InputNumber AS InputNumberMiddleC, imC.InputCreateYear AS InputCreateYearMiddleC, imC.InputUseBeginYear AS InputUseBeginYearMiddleC, 
+                      iNN.InputKind AS InputKindNeutral, iNN.InputName AS InputNameNeutral, iNN.InputTypeID AS InputTypeIDNeutral, iNN.InputManufacturerID AS InputManufacturerIDNeutral, 
+                      iNN.InputNumber AS InputNumberNeutral, iNN.InputCreateYear AS InputCreateYearNeutral, 
+                      iNN.InputUseBeginYear AS InputUseBeginYearNeutral
+FROM         Equipments INNER JOIN
+                      Substations ON Substations.SubstationID = Equipments.SubstationID INNER JOIN
+                      Branches ON Branches.BranchID = Substations.BranchID INNER JOIN
+                      Subjects ON Branches.SubjectID = Subjects.SubjectID LEFT OUTER JOIN
+                      Inputs ihA ON ihA.InputID = Equipments.InputIDHighA LEFT OUTER JOIN
+                      Inputs ihB ON ihB.InputID = Equipments.InputIDHighB LEFT OUTER JOIN
+                      Inputs ihC ON ihC.InputID = Equipments.InputIDHighC LEFT OUTER JOIN
+                      Inputs imA ON imA.InputID = Equipments.InputIDMiddleA LEFT OUTER JOIN
+                      Inputs imB ON imB.InputID = Equipments.InputIDMiddleB LEFT OUTER JOIN
+                      Inputs imC ON imC.InputID = Equipments.InputIDMiddleC LEFT OUTER JOIN
+                      Inputs iNN ON iNN.InputID = Equipments.InputIDNeutral
+WHERE     (Equipments.EquipmentID = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="EquipmentID" DataSourceName="main.Equipments" DataTypeServer="integer(8)" DbType="Int64" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int64" Scale="0" Size="8" SourceColumn="EquipmentID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EquipmentID" DataSetColumn="EquipmentID" />
+              <Mapping SourceColumn="SubstationID" DataSetColumn="SubstationID" />
+              <Mapping SourceColumn="EquipmentKindID" DataSetColumn="EquipmentKindID" />
+              <Mapping SourceColumn="EquipmentTypeID" DataSetColumn="EquipmentTypeID" />
+              <Mapping SourceColumn="ManufacturerID" DataSetColumn="ManufacturerID" />
+              <Mapping SourceColumn="ConstructionType" DataSetColumn="ConstructionType" />
+              <Mapping SourceColumn="CoolingSystemTypeID" DataSetColumn="CoolingSystemTypeID" />
+              <Mapping SourceColumn="EquipmentName" DataSetColumn="EquipmentName" />
+              <Mapping SourceColumn="EquipmentNumber" DataSetColumn="EquipmentNumber" />
+              <Mapping SourceColumn="CreateYear" DataSetColumn="CreateYear" />
+              <Mapping SourceColumn="UseBeginYear" DataSetColumn="UseBeginYear" />
+              <Mapping SourceColumn="NominalVoltageLow" DataSetColumn="NominalVoltageLow" />
+              <Mapping SourceColumn="NominalVoltageMiddle" DataSetColumn="NominalVoltageMiddle" />
+              <Mapping SourceColumn="NominalVoltageHigh" DataSetColumn="NominalVoltageHigh" />
+              <Mapping SourceColumn="NominalVoltageNeitral" DataSetColumn="NominalVoltageNeitral" />
+              <Mapping SourceColumn="NominalPower" DataSetColumn="NominalPower" />
+              <Mapping SourceColumn="ProjectLifeTime" DataSetColumn="ProjectLifeTime" />
+              <Mapping SourceColumn="ActualLifeTime" DataSetColumn="ActualLifeTime" />
+              <Mapping SourceColumn="LastWorkoverYear" DataSetColumn="LastWorkoverYear" />
+              <Mapping SourceColumn="LastTechnicalServiceYear" DataSetColumn="LastTechnicalServiceYear" />
+              <Mapping SourceColumn="TechnicalServiceDocument" DataSetColumn="TechnicalServiceDocument" />
+              <Mapping SourceColumn="TechnicalServiceConclusion" DataSetColumn="TechnicalServiceConclusion" />
+              <Mapping SourceColumn="NextTechnicalServiceYear" DataSetColumn="NextTechnicalServiceYear" />
+              <Mapping SourceColumn="TechnicalServiceCount" DataSetColumn="TechnicalServiceCount" />
+              <Mapping SourceColumn="EquipmentNote" DataSetColumn="EquipmentNote" />
+              <Mapping SourceColumn="ReadOnly" DataSetColumn="ReadOnly" />
+              <Mapping SourceColumn="ProtectionOilTypeID" DataSetColumn="ProtectionOilTypeID" />
+              <Mapping SourceColumn="InputIDHighA" DataSetColumn="InputIDHighA" />
+              <Mapping SourceColumn="InputIDHighB" DataSetColumn="InputIDHighB" />
+              <Mapping SourceColumn="InputIDHighC" DataSetColumn="InputIDHighC" />
+              <Mapping SourceColumn="InputIDMiddleA" DataSetColumn="InputIDMiddleA" />
+              <Mapping SourceColumn="InputIDMiddleB" DataSetColumn="InputIDMiddleB" />
+              <Mapping SourceColumn="InputIDMiddleC" DataSetColumn="InputIDMiddleC" />
+              <Mapping SourceColumn="InputIDNeutral" DataSetColumn="InputIDNeutral" />
+              <Mapping SourceColumn="RPNCnt" DataSetColumn="RPNCnt" />
+              <Mapping SourceColumn="RPNVoltage" DataSetColumn="RPNVoltage" />
+              <Mapping SourceColumn="RPNTypeID" DataSetColumn="RPNTypeID" />
+              <Mapping SourceColumn="RPNKind" DataSetColumn="RPNKind" />
+              <Mapping SourceColumn="RPNNumber" DataSetColumn="RPNNumber" />
+              <Mapping SourceColumn="RPNNumber2" DataSetColumn="RPNNumber2" />
+              <Mapping SourceColumn="RPNNumber3" DataSetColumn="RPNNumber3" />
+              <Mapping SourceColumn="Image" DataSetColumn="Image" />
+              <Mapping SourceColumn="EquipmentClassID" DataSetColumn="EquipmentClassID" />
+              <Mapping SourceColumn="NominalCurrent" DataSetColumn="NominalCurrent" />
+              <Mapping SourceColumn="SwitchDriveTypeID" DataSetColumn="SwitchDriveTypeID" />
+              <Mapping SourceColumn="BranchName" DataSetColumn="BranchName" />
+              <Mapping SourceColumn="SubjectName" DataSetColumn="SubjectName" />
+              <Mapping SourceColumn="SubjectID" DataSetColumn="SubjectID" />
+              <Mapping SourceColumn="BranchID" DataSetColumn="BranchID" />
+              <Mapping SourceColumn="InputKindHighA" DataSetColumn="InputKindHighA" />
+              <Mapping SourceColumn="InputNameHighA" DataSetColumn="InputNameHighA" />
+              <Mapping SourceColumn="InputTypeIDHighA" DataSetColumn="InputTypeIDHighA" />
+              <Mapping SourceColumn="InputManufacturerIDHighA" DataSetColumn="InputManufacturerIDHighA" />
+              <Mapping SourceColumn="InputNumberHighA" DataSetColumn="InputNumberHighA" />
+              <Mapping SourceColumn="InputCreateYearHighA" DataSetColumn="InputCreateYearHighA" />
+              <Mapping SourceColumn="InputUseBeginYearHighA" DataSetColumn="InputUseBeginYearHighA" />
+              <Mapping SourceColumn="InputKindHighB" DataSetColumn="InputKindHighB" />
+              <Mapping SourceColumn="InputNameHighB" DataSetColumn="InputNameHighB" />
+              <Mapping SourceColumn="InputTypeIDHighB" DataSetColumn="InputTypeIDHighB" />
+              <Mapping SourceColumn="InputManufacturerIDHighB" DataSetColumn="InputManufacturerIDHighB" />
+              <Mapping SourceColumn="InputNumberHighB" DataSetColumn="InputNumberHighB" />
+              <Mapping SourceColumn="InputCreateYearHighB" DataSetColumn="InputCreateYearHighB" />
+              <Mapping SourceColumn="InputUseBeginYearHighB" DataSetColumn="InputUseBeginYearHighB" />
+              <Mapping SourceColumn="InputKindHighC" DataSetColumn="InputKindHighC" />
+              <Mapping SourceColumn="InputNameHighC" DataSetColumn="InputNameHighC" />
+              <Mapping SourceColumn="InputTypeIDHighC" DataSetColumn="InputTypeIDHighC" />
+              <Mapping SourceColumn="InputManufacturerIDHighC" DataSetColumn="InputManufacturerIDHighC" />
+              <Mapping SourceColumn="InputNumberHighC" DataSetColumn="InputNumberHighC" />
+              <Mapping SourceColumn="InputCreateYearHighC" DataSetColumn="InputCreateYearHighC" />
+              <Mapping SourceColumn="InputUseBeginYearHighC" DataSetColumn="InputUseBeginYearHighC" />
+              <Mapping SourceColumn="InputKindMiddleA" DataSetColumn="InputKindMiddleA" />
+              <Mapping SourceColumn="InputNameMiddleA" DataSetColumn="InputNameMiddleA" />
+              <Mapping SourceColumn="InputTypeIDMiddleA" DataSetColumn="InputTypeIDMiddleA" />
+              <Mapping SourceColumn="InputManufacturerIDMiddleA" DataSetColumn="InputManufacturerIDMiddleA" />
+              <Mapping SourceColumn="InputNumberMiddleA" DataSetColumn="InputNumberMiddleA" />
+              <Mapping SourceColumn="InputCreateYearMiddleA" DataSetColumn="InputCreateYearMiddleA" />
+              <Mapping SourceColumn="InputUseBeginYearMiddleA" DataSetColumn="InputUseBeginYearMiddleA" />
+              <Mapping SourceColumn="InputKindMiddleB" DataSetColumn="InputKindMiddleB" />
+              <Mapping SourceColumn="InputNameMiddleB" DataSetColumn="InputNameMiddleB" />
+              <Mapping SourceColumn="InputTypeIDMiddleB" DataSetColumn="InputTypeIDMiddleB" />
+              <Mapping SourceColumn="InputManufacturerIDMiddleB" DataSetColumn="InputManufacturerIDMiddleB" />
+              <Mapping SourceColumn="InputNumberMiddleB" DataSetColumn="InputNumberMiddleB" />
+              <Mapping SourceColumn="InputCreateYearMiddleB" DataSetColumn="InputCreateYearMiddleB" />
+              <Mapping SourceColumn="InputUseBeginYearMiddleB" DataSetColumn="InputUseBeginYearMiddleB" />
+              <Mapping SourceColumn="InputKindMiddleC" DataSetColumn="InputKindMiddleC" />
+              <Mapping SourceColumn="InputNameMiddleC" DataSetColumn="InputNameMiddleC" />
+              <Mapping SourceColumn="InputTypeIDMiddleC" DataSetColumn="InputTypeIDMiddleC" />
+              <Mapping SourceColumn="InputManufacturerIDMiddleC" DataSetColumn="InputManufacturerIDMiddleC" />
+              <Mapping SourceColumn="InputNumberMiddleC" DataSetColumn="InputNumberMiddleC" />
+              <Mapping SourceColumn="InputCreateYearMiddleC" DataSetColumn="InputCreateYearMiddleC" />
+              <Mapping SourceColumn="InputUseBeginYearMiddleC" DataSetColumn="InputUseBeginYearMiddleC" />
+              <Mapping SourceColumn="InputKindNeutral" DataSetColumn="InputKindNeutral" />
+              <Mapping SourceColumn="InputNameNeutral" DataSetColumn="InputNameNeutral" />
+              <Mapping SourceColumn="InputTypeIDNeutral" DataSetColumn="InputTypeIDNeutral" />
+              <Mapping SourceColumn="InputManufacturerIDNeutral" DataSetColumn="InputManufacturerIDNeutral" />
+              <Mapping SourceColumn="InputNumberNeutral" DataSetColumn="InputNumberNeutral" />
+              <Mapping SourceColumn="InputCreateYearNeutral" DataSetColumn="InputCreateYearNeutral" />
+              <Mapping SourceColumn="InputUseBeginYearNeutral" DataSetColumn="InputUseBeginYearNeutral" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetQuery2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetQuery2" msprop:Generator_UserDSName="DataSetQuery2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="QEquipmentRecord" msprop:Generator_TableClassName="QEquipmentRecordDataTable" msprop:Generator_TableVarName="tableQEquipmentRecord" msprop:Generator_RowChangedName="QEquipmentRecordRowChanged" msprop:Generator_TablePropName="QEquipmentRecord" msprop:Generator_RowDeletingName="QEquipmentRecordRowDeleting" msprop:Generator_RowChangingName="QEquipmentRecordRowChanging" msprop:Generator_RowEvHandlerName="QEquipmentRecordRowChangeEventHandler" msprop:Generator_RowDeletedName="QEquipmentRecordRowDeleted" msprop:Generator_RowClassName="QEquipmentRecordRow" msprop:Generator_UserTableName="QEquipmentRecord" msprop:Generator_RowEvArgName="QEquipmentRecordRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EquipmentID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEquipmentID" msprop:Generator_ColumnPropNameInRow="EquipmentID" msprop:Generator_ColumnPropNameInTable="EquipmentIDColumn" msprop:Generator_UserColumnName="EquipmentID" type="xs:long" />
+              <xs:element name="SubstationID" msprop:Generator_ColumnVarNameInTable="columnSubstationID" msprop:Generator_ColumnPropNameInRow="SubstationID" msprop:Generator_ColumnPropNameInTable="SubstationIDColumn" msprop:Generator_UserColumnName="SubstationID" type="xs:long" minOccurs="0" />
+              <xs:element name="EquipmentKindID" msprop:Generator_ColumnVarNameInTable="columnEquipmentKindID" msprop:Generator_ColumnPropNameInRow="EquipmentKindID" msprop:Generator_ColumnPropNameInTable="EquipmentKindIDColumn" msprop:Generator_UserColumnName="EquipmentKindID" type="xs:long" minOccurs="0" />
+              <xs:element name="EquipmentTypeID" msprop:Generator_ColumnVarNameInTable="columnEquipmentTypeID" msprop:Generator_ColumnPropNameInRow="EquipmentTypeID" msprop:Generator_ColumnPropNameInTable="EquipmentTypeIDColumn" msprop:Generator_UserColumnName="EquipmentTypeID" type="xs:long" minOccurs="0" />
+              <xs:element name="ManufacturerID" msprop:Generator_ColumnVarNameInTable="columnManufacturerID" msprop:Generator_ColumnPropNameInRow="ManufacturerID" msprop:Generator_ColumnPropNameInTable="ManufacturerIDColumn" msprop:Generator_UserColumnName="ManufacturerID" type="xs:long" minOccurs="0" />
+              <xs:element name="ConstructionType" msprop:Generator_ColumnVarNameInTable="columnConstructionType" msprop:Generator_ColumnPropNameInRow="ConstructionType" msprop:Generator_ColumnPropNameInTable="ConstructionTypeColumn" msprop:Generator_UserColumnName="ConstructionType" type="xs:long" minOccurs="0" />
+              <xs:element name="CoolingSystemTypeID" msprop:Generator_ColumnVarNameInTable="columnCoolingSystemTypeID" msprop:Generator_ColumnPropNameInRow="CoolingSystemTypeID" msprop:Generator_ColumnPropNameInTable="CoolingSystemTypeIDColumn" msprop:Generator_UserColumnName="CoolingSystemTypeID" type="xs:long" minOccurs="0" />
+              <xs:element name="EquipmentName" msprop:Generator_ColumnVarNameInTable="columnEquipmentName" msprop:Generator_ColumnPropNameInRow="EquipmentName" msprop:Generator_ColumnPropNameInTable="EquipmentNameColumn" msprop:Generator_UserColumnName="EquipmentName" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EquipmentNumber" msprop:Generator_ColumnVarNameInTable="columnEquipmentNumber" msprop:Generator_ColumnPropNameInRow="EquipmentNumber" msprop:Generator_ColumnPropNameInTable="EquipmentNumberColumn" msprop:Generator_UserColumnName="EquipmentNumber" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateYear" msprop:Generator_ColumnVarNameInTable="columnCreateYear" msprop:Generator_ColumnPropNameInRow="CreateYear" msprop:Generator_ColumnPropNameInTable="CreateYearColumn" msprop:Generator_UserColumnName="CreateYear" type="xs:long" minOccurs="0" />
+              <xs:element name="UseBeginYear" msprop:Generator_ColumnVarNameInTable="columnUseBeginYear" msprop:Generator_ColumnPropNameInRow="UseBeginYear" msprop:Generator_ColumnPropNameInTable="UseBeginYearColumn" msprop:Generator_UserColumnName="UseBeginYear" type="xs:long" minOccurs="0" />
+              <xs:element name="NominalVoltageLow" msprop:Generator_ColumnVarNameInTable="columnNominalVoltageLow" msprop:Generator_ColumnPropNameInRow="NominalVoltageLow" msprop:Generator_ColumnPropNameInTable="NominalVoltageLowColumn" msprop:Generator_UserColumnName="NominalVoltageLow" type="xs:long" minOccurs="0" />
+              <xs:element name="NominalVoltageMiddle" msprop:Generator_ColumnVarNameInTable="columnNominalVoltageMiddle" msprop:Generator_ColumnPropNameInRow="NominalVoltageMiddle" msprop:Generator_ColumnPropNameInTable="NominalVoltageMiddleColumn" msprop:Generator_UserColumnName="NominalVoltageMiddle" type="xs:long" minOccurs="0" />
+              <xs:element name="NominalVoltageHigh" msprop:Generator_ColumnVarNameInTable="columnNominalVoltageHigh" msprop:Generator_ColumnPropNameInRow="NominalVoltageHigh" msprop:Generator_ColumnPropNameInTable="NominalVoltageHighColumn" msprop:Generator_UserColumnName="NominalVoltageHigh" type="xs:long" minOccurs="0" />
+              <xs:element name="NominalVoltageNeitral" msprop:Generator_ColumnVarNameInTable="columnNominalVoltageNeitral" msprop:Generator_ColumnPropNameInRow="NominalVoltageNeitral" msprop:Generator_ColumnPropNameInTable="NominalVoltageNeitralColumn" msprop:Generator_UserColumnName="NominalVoltageNeitral" type="xs:long" minOccurs="0" />
+              <xs:element name="NominalPower" msprop:Generator_ColumnVarNameInTable="columnNominalPower" msprop:Generator_ColumnPropNameInRow="NominalPower" msprop:Generator_ColumnPropNameInTable="NominalPowerColumn" msprop:Generator_UserColumnName="NominalPower" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProjectLifeTime" msprop:Generator_ColumnVarNameInTable="columnProjectLifeTime" msprop:Generator_ColumnPropNameInRow="ProjectLifeTime" msprop:Generator_ColumnPropNameInTable="ProjectLifeTimeColumn" msprop:Generator_UserColumnName="ProjectLifeTime" type="xs:long" minOccurs="0" />
+              <xs:element name="ActualLifeTime" msprop:Generator_ColumnVarNameInTable="columnActualLifeTime" msprop:Generator_ColumnPropNameInRow="ActualLifeTime" msprop:Generator_ColumnPropNameInTable="ActualLifeTimeColumn" msprop:Generator_UserColumnName="ActualLifeTime" type="xs:long" minOccurs="0" />
+              <xs:element name="LastWorkoverYear" msprop:Generator_ColumnVarNameInTable="columnLastWorkoverYear" msprop:Generator_ColumnPropNameInRow="LastWorkoverYear" msprop:Generator_ColumnPropNameInTable="LastWorkoverYearColumn" msprop:Generator_UserColumnName="LastWorkoverYear" type="xs:long" minOccurs="0" />
+              <xs:element name="LastTechnicalServiceYear" msprop:Generator_ColumnVarNameInTable="columnLastTechnicalServiceYear" msprop:Generator_ColumnPropNameInRow="LastTechnicalServiceYear" msprop:Generator_ColumnPropNameInTable="LastTechnicalServiceYearColumn" msprop:Generator_UserColumnName="LastTechnicalServiceYear" type="xs:long" minOccurs="0" />
+              <xs:element name="TechnicalServiceDocument" msprop:Generator_ColumnVarNameInTable="columnTechnicalServiceDocument" msprop:Generator_ColumnPropNameInRow="TechnicalServiceDocument" msprop:Generator_ColumnPropNameInTable="TechnicalServiceDocumentColumn" msprop:Generator_UserColumnName="TechnicalServiceDocument" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TechnicalServiceConclusion" msprop:Generator_ColumnVarNameInTable="columnTechnicalServiceConclusion" msprop:Generator_ColumnPropNameInRow="TechnicalServiceConclusion" msprop:Generator_ColumnPropNameInTable="TechnicalServiceConclusionColumn" msprop:Generator_UserColumnName="TechnicalServiceConclusion" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NextTechnicalServiceYear" msprop:Generator_ColumnVarNameInTable="columnNextTechnicalServiceYear" msprop:Generator_ColumnPropNameInRow="NextTechnicalServiceYear" msprop:Generator_ColumnPropNameInTable="NextTechnicalServiceYearColumn" msprop:Generator_UserColumnName="NextTechnicalServiceYear" type="xs:long" minOccurs="0" />
+              <xs:element name="TechnicalServiceCount" msprop:Generator_ColumnVarNameInTable="columnTechnicalServiceCount" msprop:Generator_ColumnPropNameInRow="TechnicalServiceCount" msprop:Generator_ColumnPropNameInTable="TechnicalServiceCountColumn" msprop:Generator_UserColumnName="TechnicalServiceCount" type="xs:long" minOccurs="0" />
+              <xs:element name="EquipmentNote" msprop:Generator_ColumnVarNameInTable="columnEquipmentNote" msprop:Generator_ColumnPropNameInRow="EquipmentNote" msprop:Generator_ColumnPropNameInTable="EquipmentNoteColumn" msprop:Generator_UserColumnName="EquipmentNote" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReadOnly" msprop:Generator_ColumnVarNameInTable="columnReadOnly" msprop:Generator_ColumnPropNameInRow="ReadOnly" msprop:Generator_ColumnPropNameInTable="ReadOnlyColumn" msprop:Generator_UserColumnName="ReadOnly" type="xs:long" default="0" />
+              <xs:element name="ProtectionOilTypeID" msprop:Generator_ColumnVarNameInTable="columnProtectionOilTypeID" msprop:Generator_ColumnPropNameInRow="ProtectionOilTypeID" msprop:Generator_ColumnPropNameInTable="ProtectionOilTypeIDColumn" msprop:Generator_UserColumnName="ProtectionOilTypeID" type="xs:long" minOccurs="0" />
+              <xs:element name="InputIDHighA" msprop:Generator_ColumnVarNameInTable="columnInputIDHighA" msprop:Generator_ColumnPropNameInRow="InputIDHighA" msprop:Generator_ColumnPropNameInTable="InputIDHighAColumn" msprop:Generator_UserColumnName="InputIDHighA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputIDHighB" msprop:Generator_ColumnVarNameInTable="columnInputIDHighB" msprop:Generator_ColumnPropNameInRow="InputIDHighB" msprop:Generator_ColumnPropNameInTable="InputIDHighBColumn" msprop:Generator_UserColumnName="InputIDHighB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputIDHighC" msprop:Generator_ColumnVarNameInTable="columnInputIDHighC" msprop:Generator_ColumnPropNameInRow="InputIDHighC" msprop:Generator_ColumnPropNameInTable="InputIDHighCColumn" msprop:Generator_UserColumnName="InputIDHighC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputIDMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputIDMiddleA" msprop:Generator_ColumnPropNameInRow="InputIDMiddleA" msprop:Generator_ColumnPropNameInTable="InputIDMiddleAColumn" msprop:Generator_UserColumnName="InputIDMiddleA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputIDMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputIDMiddleB" msprop:Generator_ColumnPropNameInRow="InputIDMiddleB" msprop:Generator_ColumnPropNameInTable="InputIDMiddleBColumn" msprop:Generator_UserColumnName="InputIDMiddleB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputIDMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputIDMiddleC" msprop:Generator_ColumnPropNameInRow="InputIDMiddleC" msprop:Generator_ColumnPropNameInTable="InputIDMiddleCColumn" msprop:Generator_UserColumnName="InputIDMiddleC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputIDNeutral" msprop:Generator_ColumnVarNameInTable="columnInputIDNeutral" msprop:Generator_ColumnPropNameInRow="InputIDNeutral" msprop:Generator_ColumnPropNameInTable="InputIDNeutralColumn" msprop:Generator_UserColumnName="InputIDNeutral" type="xs:long" minOccurs="0" />
+              <xs:element name="RPNCnt" msprop:Generator_ColumnVarNameInTable="columnRPNCnt" msprop:Generator_ColumnPropNameInRow="RPNCnt" msprop:Generator_ColumnPropNameInTable="RPNCntColumn" msprop:Generator_UserColumnName="RPNCnt" type="xs:long" minOccurs="0" />
+              <xs:element name="RPNVoltage" msprop:Generator_ColumnVarNameInTable="columnRPNVoltage" msprop:Generator_ColumnPropNameInRow="RPNVoltage" msprop:Generator_ColumnPropNameInTable="RPNVoltageColumn" msprop:Generator_UserColumnName="RPNVoltage" type="xs:long" minOccurs="0" />
+              <xs:element name="RPNTypeID" msprop:Generator_ColumnVarNameInTable="columnRPNTypeID" msprop:Generator_ColumnPropNameInRow="RPNTypeID" msprop:Generator_ColumnPropNameInTable="RPNTypeIDColumn" msprop:Generator_UserColumnName="RPNTypeID" type="xs:long" minOccurs="0" />
+              <xs:element name="RPNKind" msprop:Generator_ColumnVarNameInTable="columnRPNKind" msprop:Generator_ColumnPropNameInRow="RPNKind" msprop:Generator_ColumnPropNameInTable="RPNKindColumn" msprop:Generator_UserColumnName="RPNKind" type="xs:long" minOccurs="0" />
+              <xs:element name="RPNNumber" msprop:Generator_ColumnVarNameInTable="columnRPNNumber" msprop:Generator_ColumnPropNameInRow="RPNNumber" msprop:Generator_ColumnPropNameInTable="RPNNumberColumn" msprop:Generator_UserColumnName="RPNNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RPNNumber2" msprop:Generator_ColumnVarNameInTable="columnRPNNumber2" msprop:Generator_ColumnPropNameInRow="RPNNumber2" msprop:Generator_ColumnPropNameInTable="RPNNumber2Column" msprop:Generator_UserColumnName="RPNNumber2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RPNNumber3" msprop:Generator_ColumnVarNameInTable="columnRPNNumber3" msprop:Generator_ColumnPropNameInRow="RPNNumber3" msprop:Generator_ColumnPropNameInTable="RPNNumber3Column" msprop:Generator_UserColumnName="RPNNumber3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Image" msprop:Generator_ColumnVarNameInTable="columnImage" msprop:Generator_ColumnPropNameInRow="Image" msprop:Generator_ColumnPropNameInTable="ImageColumn" msprop:Generator_UserColumnName="Image" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="EquipmentClassID" msprop:Generator_ColumnVarNameInTable="columnEquipmentClassID" msprop:Generator_ColumnPropNameInRow="EquipmentClassID" msprop:Generator_ColumnPropNameInTable="EquipmentClassIDColumn" msprop:Generator_UserColumnName="EquipmentClassID" type="xs:long" minOccurs="0" />
+              <xs:element name="NominalCurrent" msprop:Generator_ColumnVarNameInTable="columnNominalCurrent" msprop:Generator_ColumnPropNameInRow="NominalCurrent" msprop:Generator_ColumnPropNameInTable="NominalCurrentColumn" msprop:Generator_UserColumnName="NominalCurrent" type="xs:long" minOccurs="0" />
+              <xs:element name="SwitchDriveTypeID" msprop:Generator_ColumnVarNameInTable="columnSwitchDriveTypeID" msprop:Generator_ColumnPropNameInRow="SwitchDriveTypeID" msprop:Generator_ColumnPropNameInTable="SwitchDriveTypeIDColumn" msprop:Generator_UserColumnName="SwitchDriveTypeID" type="xs:long" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" msprop:Generator_UserColumnName="BranchName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubjectName" msprop:Generator_ColumnVarNameInTable="columnSubjectName" msprop:Generator_ColumnPropNameInRow="SubjectName" msprop:Generator_ColumnPropNameInTable="SubjectNameColumn" msprop:Generator_UserColumnName="SubjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubjectID" msprop:Generator_ColumnVarNameInTable="columnSubjectID" msprop:Generator_ColumnPropNameInRow="SubjectID" msprop:Generator_ColumnPropNameInTable="SubjectIDColumn" msprop:Generator_UserColumnName="SubjectID" type="xs:long" minOccurs="0" />
+              <xs:element name="BranchID" msprop:Generator_ColumnVarNameInTable="columnBranchID" msprop:Generator_ColumnPropNameInRow="BranchID" msprop:Generator_ColumnPropNameInTable="BranchIDColumn" msprop:Generator_UserColumnName="BranchID" type="xs:long" minOccurs="0" />
+              <xs:element name="InputKindHighA" msprop:Generator_ColumnVarNameInTable="columnInputKindHighA" msprop:Generator_ColumnPropNameInRow="InputKindHighA" msprop:Generator_ColumnPropNameInTable="InputKindHighAColumn" msprop:Generator_UserColumnName="InputKindHighA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNameHighA" msprop:Generator_ColumnVarNameInTable="columnInputNameHighA" msprop:Generator_ColumnPropNameInRow="InputNameHighA" msprop:Generator_ColumnPropNameInTable="InputNameHighAColumn" msprop:Generator_UserColumnName="InputNameHighA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputTypeIDHighA" msprop:Generator_ColumnVarNameInTable="columnInputTypeIDHighA" msprop:Generator_ColumnPropNameInRow="InputTypeIDHighA" msprop:Generator_ColumnPropNameInTable="InputTypeIDHighAColumn" msprop:Generator_UserColumnName="InputTypeIDHighA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputManufacturerIDHighA" msprop:Generator_ColumnVarNameInTable="columnInputManufacturerIDHighA" msprop:Generator_ColumnPropNameInRow="InputManufacturerIDHighA" msprop:Generator_ColumnPropNameInTable="InputManufacturerIDHighAColumn" msprop:Generator_UserColumnName="InputManufacturerIDHighA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNumberHighA" msprop:Generator_ColumnVarNameInTable="columnInputNumberHighA" msprop:Generator_ColumnPropNameInRow="InputNumberHighA" msprop:Generator_ColumnPropNameInTable="InputNumberHighAColumn" msprop:Generator_UserColumnName="InputNumberHighA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputCreateYearHighA" msprop:Generator_ColumnVarNameInTable="columnInputCreateYearHighA" msprop:Generator_ColumnPropNameInRow="InputCreateYearHighA" msprop:Generator_ColumnPropNameInTable="InputCreateYearHighAColumn" msprop:Generator_UserColumnName="InputCreateYearHighA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputUseBeginYearHighA" msprop:Generator_ColumnVarNameInTable="columnInputUseBeginYearHighA" msprop:Generator_ColumnPropNameInRow="InputUseBeginYearHighA" msprop:Generator_ColumnPropNameInTable="InputUseBeginYearHighAColumn" msprop:Generator_UserColumnName="InputUseBeginYearHighA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputKindHighB" msprop:Generator_ColumnVarNameInTable="columnInputKindHighB" msprop:Generator_ColumnPropNameInRow="InputKindHighB" msprop:Generator_ColumnPropNameInTable="InputKindHighBColumn" msprop:Generator_UserColumnName="InputKindHighB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNameHighB" msprop:Generator_ColumnVarNameInTable="columnInputNameHighB" msprop:Generator_ColumnPropNameInRow="InputNameHighB" msprop:Generator_ColumnPropNameInTable="InputNameHighBColumn" msprop:Generator_UserColumnName="InputNameHighB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputTypeIDHighB" msprop:Generator_ColumnVarNameInTable="columnInputTypeIDHighB" msprop:Generator_ColumnPropNameInRow="InputTypeIDHighB" msprop:Generator_ColumnPropNameInTable="InputTypeIDHighBColumn" msprop:Generator_UserColumnName="InputTypeIDHighB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputManufacturerIDHighB" msprop:Generator_ColumnVarNameInTable="columnInputManufacturerIDHighB" msprop:Generator_ColumnPropNameInRow="InputManufacturerIDHighB" msprop:Generator_ColumnPropNameInTable="InputManufacturerIDHighBColumn" msprop:Generator_UserColumnName="InputManufacturerIDHighB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNumberHighB" msprop:Generator_ColumnVarNameInTable="columnInputNumberHighB" msprop:Generator_ColumnPropNameInRow="InputNumberHighB" msprop:Generator_ColumnPropNameInTable="InputNumberHighBColumn" msprop:Generator_UserColumnName="InputNumberHighB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputCreateYearHighB" msprop:Generator_ColumnVarNameInTable="columnInputCreateYearHighB" msprop:Generator_ColumnPropNameInRow="InputCreateYearHighB" msprop:Generator_ColumnPropNameInTable="InputCreateYearHighBColumn" msprop:Generator_UserColumnName="InputCreateYearHighB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputUseBeginYearHighB" msprop:Generator_ColumnVarNameInTable="columnInputUseBeginYearHighB" msprop:Generator_ColumnPropNameInRow="InputUseBeginYearHighB" msprop:Generator_ColumnPropNameInTable="InputUseBeginYearHighBColumn" msprop:Generator_UserColumnName="InputUseBeginYearHighB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputKindHighC" msprop:Generator_ColumnVarNameInTable="columnInputKindHighC" msprop:Generator_ColumnPropNameInRow="InputKindHighC" msprop:Generator_ColumnPropNameInTable="InputKindHighCColumn" msprop:Generator_UserColumnName="InputKindHighC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNameHighC" msprop:Generator_ColumnVarNameInTable="columnInputNameHighC" msprop:Generator_ColumnPropNameInRow="InputNameHighC" msprop:Generator_ColumnPropNameInTable="InputNameHighCColumn" msprop:Generator_UserColumnName="InputNameHighC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputTypeIDHighC" msprop:Generator_ColumnVarNameInTable="columnInputTypeIDHighC" msprop:Generator_ColumnPropNameInRow="InputTypeIDHighC" msprop:Generator_ColumnPropNameInTable="InputTypeIDHighCColumn" msprop:Generator_UserColumnName="InputTypeIDHighC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputManufacturerIDHighC" msprop:Generator_ColumnVarNameInTable="columnInputManufacturerIDHighC" msprop:Generator_ColumnPropNameInRow="InputManufacturerIDHighC" msprop:Generator_ColumnPropNameInTable="InputManufacturerIDHighCColumn" msprop:Generator_UserColumnName="InputManufacturerIDHighC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNumberHighC" msprop:Generator_ColumnVarNameInTable="columnInputNumberHighC" msprop:Generator_ColumnPropNameInRow="InputNumberHighC" msprop:Generator_ColumnPropNameInTable="InputNumberHighCColumn" msprop:Generator_UserColumnName="InputNumberHighC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputCreateYearHighC" msprop:Generator_ColumnVarNameInTable="columnInputCreateYearHighC" msprop:Generator_ColumnPropNameInRow="InputCreateYearHighC" msprop:Generator_ColumnPropNameInTable="InputCreateYearHighCColumn" msprop:Generator_UserColumnName="InputCreateYearHighC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputUseBeginYearHighC" msprop:Generator_ColumnVarNameInTable="columnInputUseBeginYearHighC" msprop:Generator_ColumnPropNameInRow="InputUseBeginYearHighC" msprop:Generator_ColumnPropNameInTable="InputUseBeginYearHighCColumn" msprop:Generator_UserColumnName="InputUseBeginYearHighC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputKindMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputKindMiddleA" msprop:Generator_ColumnPropNameInRow="InputKindMiddleA" msprop:Generator_ColumnPropNameInTable="InputKindMiddleAColumn" msprop:Generator_UserColumnName="InputKindMiddleA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNameMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputNameMiddleA" msprop:Generator_ColumnPropNameInRow="InputNameMiddleA" msprop:Generator_ColumnPropNameInTable="InputNameMiddleAColumn" msprop:Generator_UserColumnName="InputNameMiddleA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputTypeIDMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputTypeIDMiddleA" msprop:Generator_ColumnPropNameInRow="InputTypeIDMiddleA" msprop:Generator_ColumnPropNameInTable="InputTypeIDMiddleAColumn" msprop:Generator_UserColumnName="InputTypeIDMiddleA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputManufacturerIDMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputManufacturerIDMiddleA" msprop:Generator_ColumnPropNameInRow="InputManufacturerIDMiddleA" msprop:Generator_ColumnPropNameInTable="InputManufacturerIDMiddleAColumn" msprop:Generator_UserColumnName="InputManufacturerIDMiddleA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNumberMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputNumberMiddleA" msprop:Generator_ColumnPropNameInRow="InputNumberMiddleA" msprop:Generator_ColumnPropNameInTable="InputNumberMiddleAColumn" msprop:Generator_UserColumnName="InputNumberMiddleA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputCreateYearMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputCreateYearMiddleA" msprop:Generator_ColumnPropNameInRow="InputCreateYearMiddleA" msprop:Generator_ColumnPropNameInTable="InputCreateYearMiddleAColumn" msprop:Generator_UserColumnName="InputCreateYearMiddleA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputUseBeginYearMiddleA" msprop:Generator_ColumnVarNameInTable="columnInputUseBeginYearMiddleA" msprop:Generator_ColumnPropNameInRow="InputUseBeginYearMiddleA" msprop:Generator_ColumnPropNameInTable="InputUseBeginYearMiddleAColumn" msprop:Generator_UserColumnName="InputUseBeginYearMiddleA" type="xs:long" minOccurs="0" />
+              <xs:element name="InputKindMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputKindMiddleB" msprop:Generator_ColumnPropNameInRow="InputKindMiddleB" msprop:Generator_ColumnPropNameInTable="InputKindMiddleBColumn" msprop:Generator_UserColumnName="InputKindMiddleB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNameMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputNameMiddleB" msprop:Generator_ColumnPropNameInRow="InputNameMiddleB" msprop:Generator_ColumnPropNameInTable="InputNameMiddleBColumn" msprop:Generator_UserColumnName="InputNameMiddleB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputTypeIDMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputTypeIDMiddleB" msprop:Generator_ColumnPropNameInRow="InputTypeIDMiddleB" msprop:Generator_ColumnPropNameInTable="InputTypeIDMiddleBColumn" msprop:Generator_UserColumnName="InputTypeIDMiddleB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputManufacturerIDMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputManufacturerIDMiddleB" msprop:Generator_ColumnPropNameInRow="InputManufacturerIDMiddleB" msprop:Generator_ColumnPropNameInTable="InputManufacturerIDMiddleBColumn" msprop:Generator_UserColumnName="InputManufacturerIDMiddleB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNumberMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputNumberMiddleB" msprop:Generator_ColumnPropNameInRow="InputNumberMiddleB" msprop:Generator_ColumnPropNameInTable="InputNumberMiddleBColumn" msprop:Generator_UserColumnName="InputNumberMiddleB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputCreateYearMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputCreateYearMiddleB" msprop:Generator_ColumnPropNameInRow="InputCreateYearMiddleB" msprop:Generator_ColumnPropNameInTable="InputCreateYearMiddleBColumn" msprop:Generator_UserColumnName="InputCreateYearMiddleB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputUseBeginYearMiddleB" msprop:Generator_ColumnVarNameInTable="columnInputUseBeginYearMiddleB" msprop:Generator_ColumnPropNameInRow="InputUseBeginYearMiddleB" msprop:Generator_ColumnPropNameInTable="InputUseBeginYearMiddleBColumn" msprop:Generator_UserColumnName="InputUseBeginYearMiddleB" type="xs:long" minOccurs="0" />
+              <xs:element name="InputKindMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputKindMiddleC" msprop:Generator_ColumnPropNameInRow="InputKindMiddleC" msprop:Generator_ColumnPropNameInTable="InputKindMiddleCColumn" msprop:Generator_UserColumnName="InputKindMiddleC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNameMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputNameMiddleC" msprop:Generator_ColumnPropNameInRow="InputNameMiddleC" msprop:Generator_ColumnPropNameInTable="InputNameMiddleCColumn" msprop:Generator_UserColumnName="InputNameMiddleC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputTypeIDMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputTypeIDMiddleC" msprop:Generator_ColumnPropNameInRow="InputTypeIDMiddleC" msprop:Generator_ColumnPropNameInTable="InputTypeIDMiddleCColumn" msprop:Generator_UserColumnName="InputTypeIDMiddleC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputManufacturerIDMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputManufacturerIDMiddleC" msprop:Generator_ColumnPropNameInRow="InputManufacturerIDMiddleC" msprop:Generator_ColumnPropNameInTable="InputManufacturerIDMiddleCColumn" msprop:Generator_UserColumnName="InputManufacturerIDMiddleC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNumberMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputNumberMiddleC" msprop:Generator_ColumnPropNameInRow="InputNumberMiddleC" msprop:Generator_ColumnPropNameInTable="InputNumberMiddleCColumn" msprop:Generator_UserColumnName="InputNumberMiddleC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputCreateYearMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputCreateYearMiddleC" msprop:Generator_ColumnPropNameInRow="InputCreateYearMiddleC" msprop:Generator_ColumnPropNameInTable="InputCreateYearMiddleCColumn" msprop:Generator_UserColumnName="InputCreateYearMiddleC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputUseBeginYearMiddleC" msprop:Generator_ColumnVarNameInTable="columnInputUseBeginYearMiddleC" msprop:Generator_ColumnPropNameInRow="InputUseBeginYearMiddleC" msprop:Generator_ColumnPropNameInTable="InputUseBeginYearMiddleCColumn" msprop:Generator_UserColumnName="InputUseBeginYearMiddleC" type="xs:long" minOccurs="0" />
+              <xs:element name="InputKindNeutral" msprop:Generator_ColumnVarNameInTable="columnInputKindNeutral" msprop:Generator_ColumnPropNameInRow="InputKindNeutral" msprop:Generator_ColumnPropNameInTable="InputKindNeutralColumn" msprop:Generator_UserColumnName="InputKindNeutral" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNameNeutral" msprop:Generator_ColumnVarNameInTable="columnInputNameNeutral" msprop:Generator_ColumnPropNameInRow="InputNameNeutral" msprop:Generator_ColumnPropNameInTable="InputNameNeutralColumn" msprop:Generator_UserColumnName="InputNameNeutral" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputTypeIDNeutral" msprop:Generator_ColumnVarNameInTable="columnInputTypeIDNeutral" msprop:Generator_ColumnPropNameInRow="InputTypeIDNeutral" msprop:Generator_ColumnPropNameInTable="InputTypeIDNeutralColumn" msprop:Generator_UserColumnName="InputTypeIDNeutral" type="xs:long" minOccurs="0" />
+              <xs:element name="InputManufacturerIDNeutral" msprop:Generator_ColumnVarNameInTable="columnInputManufacturerIDNeutral" msprop:Generator_ColumnPropNameInRow="InputManufacturerIDNeutral" msprop:Generator_ColumnPropNameInTable="InputManufacturerIDNeutralColumn" msprop:Generator_UserColumnName="InputManufacturerIDNeutral" type="xs:long" minOccurs="0" />
+              <xs:element name="InputNumberNeutral" msprop:Generator_ColumnVarNameInTable="columnInputNumberNeutral" msprop:Generator_ColumnPropNameInRow="InputNumberNeutral" msprop:Generator_ColumnPropNameInTable="InputNumberNeutralColumn" msprop:Generator_UserColumnName="InputNumberNeutral" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InputCreateYearNeutral" msprop:Generator_ColumnVarNameInTable="columnInputCreateYearNeutral" msprop:Generator_ColumnPropNameInRow="InputCreateYearNeutral" msprop:Generator_ColumnPropNameInTable="InputCreateYearNeutralColumn" msprop:Generator_UserColumnName="InputCreateYearNeutral" type="xs:long" minOccurs="0" />
+              <xs:element name="InputUseBeginYearNeutral" msprop:Generator_ColumnVarNameInTable="columnInputUseBeginYearNeutral" msprop:Generator_ColumnPropNameInRow="InputUseBeginYearNeutral" msprop:Generator_ColumnPropNameInTable="InputUseBeginYearNeutralColumn" msprop:Generator_UserColumnName="InputUseBeginYearNeutral" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:QEquipmentRecord" />
+      <xs:field xpath="mstns:EquipmentID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

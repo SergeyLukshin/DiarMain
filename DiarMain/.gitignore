@@ -1,0 +1,7 @@
+/Новая папка/
+/obj/
+/bin/
+*.csproj.vspscc
+*.scc
+*.db
+*.sqlite_2

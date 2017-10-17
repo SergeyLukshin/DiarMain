@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{810BD23F-C5E2-444D-96F8-250A1297751F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiarMain</RootNamespace>
+    <AssemblyName>DiarMain</AssemblyName>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>main_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.OfficeSkins.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinAdd, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinAdd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinAdd2, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinAdd2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinElectrical, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinElectrical.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinFHA, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <HintPath>bin\Debug\DLL\SkinFHA.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinHARG, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinHARG.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinParameter, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinParameter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinPassport, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinPassport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinReport, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinReport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinVibro, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinVibro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinVisual, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinVisual.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkinWarm, Version=11.1.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DLL\SkinWarm.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algorithms\DataSetQueryTableAdapters.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Algorithms\ImportData.cs" />
+    <Compile Include="Reports\PrePrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PrePrintForm.Designer.cs">
+      <DependentUpon>PrePrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PswForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PswForm.Designer.cs">
+      <DependentUpon>PswForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetQuery.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetQuery.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetQuery2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetQuery2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\CheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\CheckForm.Designer.cs">
+      <DependentUpon>CheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\SwitchDriveTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\SwitchDriveTypeForm.Designer.cs">
+      <DependentUpon>SwitchDriveTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\ManufacturerInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\ManufacturerInputForm.Designer.cs">
+      <DependentUpon>ManufacturerInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspections\CheckDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspections\CheckDataForm.Designer.cs">
+      <DependentUpon>CheckDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\AddPassportMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\AddPassportMessageForm.Designer.cs">
+      <DependentUpon>AddPassportMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algorithms\CalcAlgorithms.cs" />
+    <Compile Include="Algorithms\CommonStructures.cs" />
+    <Compile Include="Algorithms\RC4.cs" />
+    <Compile Include="Dictionaries\InputVoltageTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\InputVoltageTypeForm.Designer.cs">
+      <DependentUpon>InputVoltageTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\RPNTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\RPNTypeForm.Designer.cs">
+      <DependentUpon>RPNTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\PrintFillabilityMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\PrintFillabilityMessageForm.Designer.cs">
+      <DependentUpon>PrintFillabilityMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\NoFindEquipmentMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\NoFindEquipmentMessageForm.Designer.cs">
+      <DependentUpon>NoFindEquipmentMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRepositoryElement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Algorithms\DefectAlgorithms.cs" />
+    <Compile Include="MainCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainCheckForm.Designer.cs">
+      <DependentUpon>MainCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\EquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\EquipmentForm.Designer.cs">
+      <DependentUpon>EquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspections\ParameterLimitAlgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspections\ParameterLimitAlgForm.Designer.cs">
+      <DependentUpon>ParameterLimitAlgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspections\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspections\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspections\ParameterLimitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspections\ParameterLimitForm.Designer.cs">
+      <DependentUpon>ParameterLimitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lexems.cs" />
+    <Compile Include="LicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicenseForm.Designer.cs">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MS Office\Word.cs" />
+    <Compile Include="MyLocalizer.cs" />
+    <Compile Include="Inspections\PassportDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspections\PassportDataForm.Designer.cs">
+      <DependentUpon>PassportDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspections\InspectionDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspections\InspectionDataForm.Designer.cs">
+      <DependentUpon>InspectionDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspections\InspectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspections\InspectionForm.Designer.cs">
+      <DependentUpon>InspectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\EquipmentTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\EquipmentTypeForm.Designer.cs">
+      <DependentUpon>EquipmentTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\ManufacturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\ManufacturerForm.Designer.cs">
+      <DependentUpon>ManufacturerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\SubstationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\SubstationForm.Designer.cs">
+      <DependentUpon>SubstationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMain.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dictionaries\SubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\SubjectForm.Designer.cs">
+      <DependentUpon>SubjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaries\BranchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dictionaries\BranchForm.Designer.cs">
+      <DependentUpon>BranchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServicePackForm.Designer.cs">
+      <DependentUpon>ServicePackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WaitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\WaitingForm.Designer.cs">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\PrePrintForm.resx">
+      <DependentUpon>PrePrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PswForm.resx">
+      <DependentUpon>PswForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\CheckForm.resx">
+      <DependentUpon>CheckForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\SwitchDriveTypeForm.resx">
+      <DependentUpon>SwitchDriveTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\ManufacturerInputForm.resx">
+      <DependentUpon>ManufacturerInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspections\CheckDataForm.resx">
+      <DependentUpon>CheckDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\AddPassportMessageForm.resx">
+      <DependentUpon>AddPassportMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\InputVoltageTypeForm.resx">
+      <DependentUpon>InputVoltageTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\RPNTypeForm.resx">
+      <DependentUpon>RPNTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\PrintFillabilityMessageForm.resx">
+      <DependentUpon>PrintFillabilityMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\NoFindEquipmentMessageForm.resx">
+      <DependentUpon>NoFindEquipmentMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainCheckForm.resx">
+      <DependentUpon>MainCheckForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\EquipmentForm.resx">
+      <DependentUpon>EquipmentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspections\ParameterLimitAlgForm.resx">
+      <DependentUpon>ParameterLimitAlgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspections\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspections\ParameterLimitForm.resx">
+      <DependentUpon>ParameterLimitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspections\PassportDataForm.resx">
+      <DependentUpon>PassportDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspections\InspectionDataForm.resx">
+      <DependentUpon>InspectionDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspections\InspectionForm.resx">
+      <DependentUpon>InspectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\EquipmentTypeForm.resx">
+      <DependentUpon>EquipmentTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\ManufacturerForm.resx">
+      <DependentUpon>ManufacturerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseForm.resx">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\SubstationForm.resx">
+      <DependentUpon>SubstationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Dictionaries\SubjectForm.resx">
+      <DependentUpon>SubjectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\BranchForm.resx">
+      <DependentUpon>BranchForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicePackForm.resx">
+      <DependentUpon>ServicePackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\WaitingForm.resx">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetMain.xsc">
+      <DependentUpon>DataSetMain.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMain.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMain.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMain.xss">
+      <DependentUpon>DataSetMain.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetQuery.xsc">
+      <DependentUpon>DataSetQuery.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetQuery.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetQuery.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetQuery.xss">
+      <DependentUpon>DataSetQuery.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetQuery2.xsc">
+      <DependentUpon>DataSetQuery2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetQuery2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetQuery2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetQuery2.xss">
+      <DependentUpon>DataSetQuery2.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="main_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
